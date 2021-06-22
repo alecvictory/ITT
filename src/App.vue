@@ -6,26 +6,28 @@
     <div class="row">
       <div class="d-flex">
         <h2>Loan Amount</h2>
-        <input type="number" v-model="state.loanAmount" @input="calculateMortgage">
+        <input type="number" v-model="state.loanAmount" @change="calculateMortgage()">
       </div>
       <div class="d-flex">
         <h2>Interest Rate</h2>
-        <input type="number" v-model="state.loanRate" @input="calculateMortgage">
+        <input type="number" v-model="state.loanRate" @change="calculateMortgage()">
       </div>
       <div class="d-flex">
         <div class="form">
           <div class="form-group">
             <label><h5>Loan Length</h5></label>
             <select
-              @input="calculateMortgage"
+              @change="calculateMortgage()"
               v-model="state.loanLength"
               type="drop-down"
               class="form-control"
-              placeholder=""
-              aria-describedby="helpId"
             >
-              <option>15 years</option>
-              <option>30 years</option>
+              <option value="15">
+                15 years
+              </option>
+              <option value="30">
+                30 years
+              </option>
             </select>
           </div>
         </div>
